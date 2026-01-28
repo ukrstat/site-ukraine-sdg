@@ -1,0 +1,5 @@
+pyyaml
+gitpython
+unflatten
+pandas
+xlrd==1.2.0
