@@ -215,7 +215,7 @@ progress_status:
   status_types: []
 progressive_web_app: {}
 proxy_indicators: {}
-remote_data_prefix: https://sdg-kitsoft-stg.github.io/data-ukraine-sdg
+remote_data_prefix: https://ukrstat.github.io/data-ukraine-sdg
 reporting_status:
   title: status.reporting_status
   description: status.description
@@ -230,7 +230,7 @@ reporting_status:
     - value: notapplicable
       label: status.not_applicable
       hide_on_goal_pages: false
-repository_url_data: https://github.com/sdg-kitsoft-stg/data-ukraine-sdg
+repository_url_data: https://github.com/ukrstat/data-ukraine-sdg
 repository_url_site: ''
 search_index_boost: []
 search_index_extra_fields: []

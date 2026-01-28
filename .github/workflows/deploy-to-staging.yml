@@ -26,7 +26,7 @@ jobs:
       - name: Checkout translations repository
         uses: actions/checkout@v4
         with:
-          repository: sdg-kitsoft-stg/sdg-translations
+          repository: ukrstat/sdg-translations
           ref: main
           path: translations-repo
           persist-credentials: false
@@ -45,13 +45,13 @@ jobs:
       - name: Debug - test real indicator files in remote data
         run: |
           echo "=== Check indicator endpoints ==="
-          curl -s -o /dev/null -w "EN meta 8-5-3 status: %{http_code}\n" "https://sdg-kitsoft-stg.github.io/data-ukraine-sdg/en/meta/8-5-3.json"
-          curl -s -o /dev/null -w "EN data 8-5-3 status: %{http_code}\n" "https://sdg-kitsoft-stg.github.io/data-ukraine-sdg/en/data/8-5-3.csv"
-          curl -s -o /dev/null -w "EN headline 8-5-3 status: %{http_code}\n" "https://sdg-kitsoft-stg.github.io/data-ukraine-sdg/en/headline/8-5-3.csv"
+          curl -s -o /dev/null -w "EN meta 8-5-3 status: %{http_code}\n" "https://ukrstat.github.io/data-ukraine-sdg/en/meta/8-5-3.json"
+          curl -s -o /dev/null -w "EN data 8-5-3 status: %{http_code}\n" "https://ukrstat.github.io/data-ukraine-sdg/en/data/8-5-3.csv"
+          curl -s -o /dev/null -w "EN headline 8-5-3 status: %{http_code}\n" "https://ukrstat.github.io/data-ukraine-sdg/en/headline/8-5-3.csv"
 
-          curl -s -o /dev/null -w "UK meta 8-5-3 status: %{http_code}\n" "https://sdg-kitsoft-stg.github.io/data-ukraine-sdg/uk/meta/8-5-3.json"
-          curl -s -o /dev/null -w "UK data 8-5-3 status: %{http_code}\n" "https://sdg-kitsoft-stg.github.io/data-ukraine-sdg/uk/data/8-5-3.csv"
-          curl -s -o /dev/null -w "UK headline 8-5-3 status: %{http_code}\n" "https://sdg-kitsoft-stg.github.io/data-ukraine-sdg/uk/headline/8-5-3.csv"
+          curl -s -o /dev/null -w "UK meta 8-5-3 status: %{http_code}\n" "https://ukrstat.github.io/data-ukraine-sdg/uk/meta/8-5-3.json"
+          curl -s -o /dev/null -w "UK data 8-5-3 status: %{http_code}\n" "https://ukrstat.github.io/data-ukraine-sdg/uk/data/8-5-3.csv"
+          curl -s -o /dev/null -w "UK headline 8-5-3 status: %{http_code}\n" "https://ukrstat.github.io/data-ukraine-sdg/uk/headline/8-5-3.csv"
 
       - name: Debug - check indicators pages exist
         run: |
@@ -112,9 +112,9 @@ jobs:
       - name: Debug - check remote data accessible from runner
         run: |
           echo "=== remote data HTTP status ==="
-          curl -s -o /dev/null -w "UK headline status: %{http_code}\n" "https://sdg-kitsoft-stg.github.io/data-ukraine-sdg/uk/headline/8-5-3.json"
-          curl -s -o /dev/null -w "UK meta/all.json status: %{http_code}\n" "https://sdg-kitsoft-stg.github.io/data-ukraine-sdg/uk/meta/all.json"
-          curl -s -o /dev/null -w "EN meta/all.json status: %{http_code}\n" "https://sdg-kitsoft-stg.github.io/data-ukraine-sdg/en/meta/all.json"
+          curl -s -o /dev/null -w "UK headline status: %{http_code}\n" "https://ukrstat.github.io/data-ukraine-sdg/uk/headline/8-5-3.json"
+          curl -s -o /dev/null -w "UK meta/all.json status: %{http_code}\n" "https://ukrstat.github.io/data-ukraine-sdg/uk/meta/all.json"
+          curl -s -o /dev/null -w "EN meta/all.json status: %{http_code}\n" "https://ukrstat.github.io/data-ukraine-sdg/en/meta/all.json"
 
       - name: Debug - find remote data fetch logic in JS
         run: |

@@ -16,7 +16,7 @@ jobs:
       - name: Checkout translations repo
         uses: actions/checkout@v4
         with:
-          repository: sdg-kitsoft-stg/sdg-translations
+          repository: ukrstat/sdg-translations
           ref: main
           path: _tmp_translations
           persist-credentials: false
