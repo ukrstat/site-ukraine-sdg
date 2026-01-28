@@ -1,0 +1,51 @@
+name: Deploy to production
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkout translations repo
+        uses: actions/checkout@v4
+        with:
+          repository: sdg-kitsoft-stg/sdg-translations
+          ref: main
+          path: _tmp_translations
+          persist-credentials: false
+
+      - name: Copy translations into translations
+        run: |
+          mkdir -p translations
+          rm -rf translations/*
+          cp -R _tmp_translations/translations/* translations/
+      - name: Verify translations exist
+        run: |
+          test -f translations/en/general.yml
+          echo "✅ translations copied"
+
+      - name: Set up Ruby 3.2
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2.2'
+          bundler-cache: true
+
+      - name: Build the site
+        run: |
+          JEKYLL_ENV=production bundle exec jekyll build --config _config.yml,_config_prod.yml
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          REPOSITORY_NAME: sdg-ua-production/sdg-ua-production.github.io
+          ACCESS_TOKEN: ${{ secrets.token }}
+          BRANCH: master
+          FOLDER: _site
+          CLEAN: true

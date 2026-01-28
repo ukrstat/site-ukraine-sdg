@@ -1,0 +1,95 @@
+﻿environment: staging
+# Replace my-github-org and open-sdg-data-starter as needed.
+remote_data_prefix: "https://sdg-kitsoft-stg.github.io/data-ukraine-sdg"
+repository_url_data: "https://github.com/sdg-kitsoft-stg/data-ukraine-sdg"
+fetch_remote_data: true
+analytics:
+  # For production, you likely want to enter a Google Analytics code below.
+  ga_prod: ''
+reporting_status:
+  field:
+    name: reporting_status
+    options:
+      complete: Complete
+      inprogress: In progress
+      notstarted: Not started
+      notapplicable: Not applicable
+favicons: favicon.io
+footer_language_toggle: none
+footer_menu:
+  - path: /contact-us
+    translation_key: menu.contact_us
+  - path: 'https://x.com/Ukrstat'
+    translation_key: general.twitter
+  - path: 'https://www.facebook.com/Ukrstat/'
+    translation_key: general.facebook
+  - path: /about/cookies-and-privacy/
+    translation_key: menu.cookies
+frontpage_cards:
+  - title: frontpage.download_all
+    include: components/download-all-data.html
+  - title: custom.statistics_Ukraine
+    include: components/card.html
+    button_label: custom.statistics_button_label
+    button_link: 'http://www.ukrstat.gov.ua/'
+  - title: custom.sdg_ukrstat
+    include: components/card.html
+    button_label: custom.sdg_ukrstat_label
+    button_link: 'http://www.ukrstat.gov.ua/csr_prezent/ukr/st_rozv/metadata/metadata.htm'
+create_goals:
+  previous_next_links: false
+  goals:
+    - goal: 1
+    - goal: 2
+    - goal: 3
+    - goal: 4
+    - goal: 5
+    - goal: 6
+    - goal: 7
+    - goal: 8
+    - goal: 9
+    - goal: 10
+    - goal: 11
+    - goal: 12
+    - goal: 13
+    - goal: 14
+    - goal: 15
+    - goal: 16
+    - goal: 17
+goal_image_base: /site-ukraine-sdg/assets/img/goals
+goal_image_extension: svg
+goals_page:
+  title: general.goals
+  description: goal.description
+create_indicators:
+  layout: indicator
+  previous_next_links: false
+frontpage_goals_grid:
+  title: frontpage.goals_title
+  description: frontpage.goals_description
+menu:
+  - path: /goals
+    translation_key: general.goals
+    dropdown: []
+  - path: /reporting-status
+    translation_key: menu.reporting_status
+    dropdown: []
+  - path: /about
+    translation_key: menu.about
+    dropdown: []
+  - path: /faq
+    translation_key: menu.faq
+    dropdown: []
+  - path: /useful-links
+    translation_key: menu.useful_links
+    dropdown: []
+frontpage_introduction_banner:
+  title: frontpage.intro_title
+  description: frontpage.intro_body
+custom_css: []
+custom_js:
+  - /assets/js/custom.js
+languages:
+  - en
+  - uk
+default_language: uk

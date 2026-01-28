@@ -1,0 +1,43 @@
+# Jekyll configuration for Open SDG platform
+
+# Tell the Remote Theme plugin to use the Open SDG platform (Jekyll theme).
+remote_theme: ukrstat/open-sdg@main
+remote_data_prefix: "https://ukrstat.github.io/data-ukraine-sdg/"
+repository_url_data: "https://github.com/ukrstat/data-ukraine-sdg"
+
+# Replace this title as needed.
+title: general.site_title
+baseurl: ""
+url: ""
+environment: staging
+
+# Pages
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+  posts:
+    output: true
+    permalink: /news/:year/:month/:day/:title.html
+  indicators:
+    output: true
+  goals:
+    output: true
+
+# Tell Jekyll to use the Remote Theme plugin.
+plugins:
+  - jekyll-remote-theme
+  - jekyll-open-sdg-plugins
+
+# Exclude some files/folders.
+exclude:
+  - vendor
+  - scripts
+  - remotedata
+  - Gemfile
+  - Gemfile.lock
+  - README
+  - README.md
+  - LICENSE
+
+hide_empty_metadata: true
