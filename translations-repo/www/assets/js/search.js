@@ -1,9 +1,9 @@
 async function init() {
   try {
     const data = await Promise.all([
-      fetch('/site-ukraine-sdg/translations.json')
+      fetch('/translations.json')
         .then((response) => response.json()),
-      fetch('/site-ukraine-sdg/contexts.json')
+      fetch('/contexts.json')
         .then((response) => response.json())
     ]);
     const languages = data[0];
