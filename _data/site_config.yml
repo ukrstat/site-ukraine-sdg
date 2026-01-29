@@ -56,7 +56,7 @@ create_goals:
     - goal: 15
     - goal: 16
     - goal: 17
-goal_image_base: /site-ukraine-sdg/assets/img/goals
+goal_image_base: /assets/img/goals
 goal_image_extension: svg
 goals_page:
   title: general.goals
