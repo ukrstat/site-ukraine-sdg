@@ -1,7 +1,7 @@
 ﻿environment: staging
 # Replace my-github-org and open-sdg-data-starter as needed.
-remote_data_prefix: "https://ukrstat.github.io/data-ukraine-sdg"
-repository_url_data: "https://github.com/ukrstat/data-ukraine-sdg"
+remote_data_prefix: "https://uaukrstat.github.io/data-ukraine-sdg"
+repository_url_data: "https://github.com/uaukrstat/data-ukraine-sdg"
 fetch_remote_data: true
 analytics:
   # For production, you likely want to enter a Google Analytics code below.
